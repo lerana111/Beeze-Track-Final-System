@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83% 53.3%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 190 95% 45%;
+    --chart-3: 150 60% 45%;
+    --chart-4: 260 80% 55%;
+    --chart-5: 330 90% 65%;
+    --radius: 0.5rem;
+    --sidebar-background: 220 30% 95%;
+    --sidebar-foreground: 220 50% 20%;
+    --sidebar-primary: 220 70% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 20% 92%;
+    --sidebar-accent-foreground: 220 50% 20%;
+    --sidebar-border: 220 20% 90%;
+    --sidebar-ring: 220 70% 50%;
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 98%;
+    --warning: 35 100% 50%;
+    --warning-foreground: 210 50% 10%;
+    --info: 220 70% 50%;
+    --info-foreground: 0 0% 98%;
+  }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 60%;
+    --chart-2: 190 95% 50%;
+    --chart-3: 150 80% 55%;
+    --chart-4: 260 80% 60%;
+    --chart-5: 330 90% 65%;
+    --sidebar-background: 220 50% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 220 70% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 30% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 220 70% 60%;
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 98%;
+    --warning: 35 100% 50%;
+    --warning-foreground: 210 50% 10%;
+    --info: 220 70% 60%;
+    --info-foreground: 0 0% 98%;
+  }
+}
+
+/* Status colors for delivery tracking */
+.status-pending {
+  @apply text-amber-600 dark:text-amber-500;
+}
+
+.status-in-transit {
+  @apply text-blue-600 dark:text-blue-500;
+}
+
+.status-delivered {
+  @apply text-emerald-600 dark:text-emerald-500;
+}
+
+.status-delayed {
+  @apply text-red-600 dark:text-red-500;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  @apply bg-gradient-to-r from-primary to-primary/80;
+}
+
+.bg-gradient-card {
+  @apply bg-gradient-to-br from-card to-card/95;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Enhanced link styles */
+a {
+  @apply transition-all duration-300;
+}
+
+a:not(.btn):hover {
+  @apply text-primary;
+}
+
+/* Custom focus styles */
+*:focus-visible {
+  @apply ring-2 ring-primary/50 outline-none;
+}
+
+/* Modern link hover effects */
+.link-hover {
+  @apply relative;
+}
+
+.link-hover::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.link-hover:hover::after {
+  @apply w-full;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 hover:-translate-y-1;
+}
+
+/* Enhanced interactive elements */
+.interactive {
+  @apply transition-all duration-300 hover:brightness-110 active:brightness-90 hover:scale-[1.02] active:scale-[0.98];
+}
+
+/* Animated gradient button backgrounds */
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Badge styling */
+.badge {
+  @apply inline-flex items-center justify-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+}
+
+/* Add modern scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full transition-colors hover:bg-primary/50;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+/* Custom animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
