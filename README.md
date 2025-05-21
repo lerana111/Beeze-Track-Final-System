@@ -25,7 +25,6 @@ BeezeTrack is a complete package delivery tracking system with a Next.js fronten
    ```
 4. Activate the virtual environment:
    - Windows: `venv\Scripts\activate`
-   - macOS/Linux: `source venv/bin/activate`
 5. Install dependencies:
    ```
    pip install -r requirements.txt
